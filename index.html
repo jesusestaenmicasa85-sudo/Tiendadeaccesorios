@@ -6,22 +6,21 @@
   <title>Selección</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      /* Paleta perlada / pastel (#F0E1DD, #B4AECC, #B294B2, #8893BD) */
-      --petal-pink: #F0E1DD;
-      --lavender-shimmer: #B4AECC;
-      --lupine-mauve: #B294B2;
-      --hydrangea-blue: #8893BD;
+      /* Paleta Y2K Pop Vibrante y Energética */
+      --hot-magenta: #F21E8E;
+      --electric-yellow: #F9E814;
+      --bubblegum-pink: #F566B8;
+      --cream-pop: #FAF5F7;
+      --carbon-ink: #1A1619;
+      --carbon-soft: #3A3238;
 
-      --ivory-base: #FAF6F5;
-      --card-surface: rgba(255, 255, 255, 0.85);
-      --text-dark: #2A2233;
-      --text-muted: #655B73;
-      --border-pearl: rgba(180, 174, 204, 0.55);
-      --shadow-soft: 0 18px 40px rgba(136, 147, 189, 0.16);
+      --card-bg: #FAF5F7;
+      --border-pop: #1A1619;
+      --shadow-pop: 6px 6px 0px #1A1619;
     }
 
     * {
@@ -32,8 +31,12 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: linear-gradient(145deg, var(--ivory-base) 0%, var(--petal-pink) 55%, #E7DFEC 100%);
-      color: var(--text-dark);
+      background-color: var(--hot-magenta);
+      background-image:
+        radial-gradient(circle at 12% 15%, var(--electric-yellow) 0%, transparent 26%),
+        radial-gradient(circle at 88% 80%, var(--bubblegum-pink) 0%, transparent 32%),
+        linear-gradient(155deg, var(--hot-magenta) 0%, #DF147D 52%, var(--bubblegum-pink) 100%);
+      color: var(--carbon-ink);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -54,10 +57,13 @@
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
-      background: radial-gradient(circle at 20% 20%, #F7ECE9 0%, var(--petal-pink) 42%, var(--lavender-shimmer) 82%, var(--hydrangea-blue) 100%);
+      background:
+        radial-gradient(circle at 18% 22%, var(--electric-yellow) 0%, transparent 30%),
+        radial-gradient(circle at 84% 78%, var(--electric-yellow) 0%, transparent 24%),
+        linear-gradient(135deg, var(--hot-magenta) 0%, #E31582 55%, var(--bubblegum-pink) 100%);
       z-index: 100;
       overflow: hidden;
-      transition: opacity 0.85s ease, visibility 0.85s ease;
+      transition: opacity 0.75s ease, visibility 0.75s ease;
     }
 
     .welcome-portal.fade-out {
@@ -67,52 +73,56 @@
 
     .welcome-glow {
       position: absolute;
-      width: 420px;
-      height: 420px;
+      width: 440px;
+      height: 440px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0) 70%);
+      background: radial-gradient(circle, rgba(249, 232, 20, 0.45) 0%, rgba(249, 232, 20, 0) 70%);
       pointer-events: none;
-      animation: pulseAura 4s ease-in-out infinite;
+      animation: pulseAura 3.2s ease-in-out infinite;
     }
 
     .welcome-content {
       position: relative;
       z-index: 2;
-      max-width: 540px;
+      max-width: 560px;
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: fadeUpIntro 1s ease forwards;
+      animation: fadeUpIntro 0.85s ease forwards;
     }
 
     .micro-greeting {
-      font-size: 0.78rem;
-      letter-spacing: 0.28em;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.24em;
       text-transform: uppercase;
-      color: var(--text-dark);
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.85);
-      padding: 0.42rem 1.15rem;
+      color: var(--carbon-ink);
+      background: var(--electric-yellow);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0px var(--carbon-ink);
+      padding: 0.45rem 1.2rem;
       border-radius: 999px;
-      margin-bottom: 1.1rem;
-      backdrop-filter: blur(8px);
+      margin-bottom: 1.15rem;
     }
 
     .welcome-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 5vw, 3.1rem);
+      font-size: clamp(2.1rem, 5.2vw, 3.25rem);
       font-weight: 600;
-      line-height: 1.12;
-      color: var(--text-dark);
-      margin-bottom: 0.65rem;
+      line-height: 1.08;
+      color: var(--cream-pop);
+      text-shadow: 3px 3px 0px var(--carbon-ink);
+      margin-bottom: 0.7rem;
     }
 
     .welcome-subtitle {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-      margin-bottom: 1.8rem;
-      max-width: 390px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--electric-yellow);
+      text-shadow: 1.5px 1.5px 0px var(--carbon-ink);
+      margin-bottom: 1.75rem;
+      max-width: 410px;
     }
 
     .yasmin-stage {
@@ -120,45 +130,46 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: yasminFloat 3.4s ease-in-out infinite;
+      animation: yasminBounce 2.9s ease-in-out infinite;
     }
 
     .speech-bubble {
       position: relative;
-      background: rgba(255, 255, 255, 0.9);
-      border: 1.5px solid var(--lavender-shimmer);
-      color: var(--text-dark);
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.45rem 1.05rem;
+      background: var(--electric-yellow);
+      border: 2.5px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0px var(--carbon-ink);
+      color: var(--carbon-ink);
+      font-weight: 800;
+      font-size: 0.98rem;
+      padding: 0.45rem 1.1rem;
       border-radius: 999px;
-      box-shadow: 0 10px 24px rgba(42, 34, 51, 0.12);
       margin-bottom: 0.75rem;
       opacity: 0;
-      transform: translateY(8px) scale(0.92);
-      animation: bubblePop 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards;
+      transform: translateY(8px) scale(0.9);
+      animation: bubblePop 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
     }
 
     .speech-bubble::after {
       content: "";
       position: absolute;
-      bottom: -6px;
+      bottom: -7px;
       left: 50%;
       transform: translateX(-50%) rotate(45deg);
-      width: 10px;
-      height: 10px;
-      background: rgba(255, 255, 255, 0.92);
-      border-right: 1.5px solid var(--lavender-shimmer);
-      border-bottom: 1.5px solid var(--lavender-shimmer);
+      width: 11px;
+      height: 11px;
+      background: var(--electric-yellow);
+      border-right: 2.5px solid var(--carbon-ink);
+      border-bottom: 2.5px solid var(--carbon-ink);
     }
 
     .yasmin-frame {
-      width: 210px;
-      height: 255px;
-      border-radius: 110px 110px 28px 28px;
+      width: 215px;
+      height: 260px;
+      border-radius: 110px 110px 30px 30px;
       padding: 6px;
-      background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), var(--lavender-shimmer));
-      box-shadow: 0 22px 45px rgba(42, 34, 51, 0.18);
+      background: var(--electric-yellow);
+      border: 3px solid var(--carbon-ink);
+      box-shadow: 8px 8px 0px var(--carbon-ink);
       overflow: hidden;
     }
 
@@ -166,13 +177,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 104px 104px 22px 22px;
+      border-radius: 102px 102px 24px 24px;
       display: block;
     }
 
-    @keyframes yasminFloat {
-      0%, 100% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-8px) rotate(1.1deg); }
+    @keyframes yasminBounce {
+      0%, 100% { transform: translateY(0px) rotate(-1deg); }
+      50% { transform: translateY(-9px) rotate(1.5deg); }
     }
 
     @keyframes bubblePop {
@@ -186,14 +197,14 @@
 
     @keyframes pulseAura {
       0%, 100% { transform: scale(0.95); opacity: 0.65; }
-      50% { transform: scale(1.08); opacity: 0.95; }
+      50% { transform: scale(1.1); opacity: 1; }
     }
 
     /* =========================================
        BARRA SUPERIOR Y CONTENEDOR
        ========================================= */
     .store-shell {
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 0 auto;
       padding: 1.1rem 1.25rem 4rem;
     }
@@ -202,13 +213,12 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.75rem 1.15rem;
-      background: var(--card-surface);
-      border: 1px solid var(--border-pearl);
+      padding: 0.72rem 1.15rem;
+      background: var(--cream-pop);
+      border: 2.5px solid var(--carbon-ink);
       border-radius: 999px;
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 2rem;
+      box-shadow: var(--shadow-pop);
+      margin-bottom: 2.2rem;
       position: sticky;
       top: 0.9rem;
       z-index: 30;
@@ -218,9 +228,9 @@
       background: none;
       border: none;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: var(--carbon-ink);
       cursor: pointer;
     }
 
@@ -228,26 +238,28 @@
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      background: var(--lupine-mauve);
-      color: #fff;
-      border: none;
-      padding: 0.52rem 1rem;
+      background: var(--electric-yellow);
+      color: var(--carbon-ink);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--carbon-ink);
+      padding: 0.48rem 1rem;
       border-radius: 999px;
       font-size: 0.88rem;
-      font-weight: 500;
+      font-weight: 800;
       cursor: pointer;
-      transition: background 0.25s ease, transform 0.2s ease;
+      transition: transform 0.15s ease, background 0.15s ease;
     }
 
     .cart-trigger:hover {
-      background: var(--hydrangea-blue);
-      transform: translateY(-1px);
+      background: var(--bubblegum-pink);
+      transform: translate(-1px, -1px);
     }
 
     .cart-badge {
-      background: #fff;
-      color: var(--text-dark);
-      font-weight: 600;
+      background: var(--hot-magenta);
+      color: var(--cream-pop);
+      border: 1.5px solid var(--carbon-ink);
+      font-weight: 800;
       font-size: 0.78rem;
       min-width: 22px;
       height: 22px;
@@ -260,7 +272,7 @@
 
     .view {
       display: none;
-      animation: fadeUpIntro 0.45s ease;
+      animation: fadeUpIntro 0.4s ease;
     }
 
     .view.active {
@@ -276,71 +288,80 @@
     }
 
     .eyebrow {
-      font-size: 0.75rem;
+      display: inline-block;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.22em;
-      color: var(--hydrangea-blue);
-      font-weight: 600;
-      margin-bottom: 0.35rem;
+      letter-spacing: 0.2em;
+      background: var(--electric-yellow);
+      color: var(--carbon-ink);
+      border: 2px solid var(--carbon-ink);
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+      font-weight: 800;
+      margin-bottom: 0.55rem;
     }
 
     .catalog-hero h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      font-size: clamp(2.1rem, 4.5vw, 2.9rem);
       font-weight: 600;
-      margin-bottom: 1.1rem;
+      color: var(--cream-pop);
+      text-shadow: 3px 3px 0px var(--carbon-ink);
+      margin-bottom: 1.15rem;
     }
 
     .filter-pills {
       display: inline-flex;
-      gap: 0.5rem;
+      gap: 0.6rem;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .pill {
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--border-pearl);
-      color: var(--text-dark);
-      padding: 0.48rem 1.05rem;
+      background: var(--cream-pop);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--carbon-ink);
+      color: var(--carbon-ink);
+      padding: 0.5rem 1.1rem;
       border-radius: 999px;
       font-size: 0.86rem;
+      font-weight: 700;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
     }
 
     .pill.active,
     .pill:hover {
-      background: var(--hydrangea-blue);
-      border-color: var(--hydrangea-blue);
-      color: #fff;
+      background: var(--electric-yellow);
+      transform: translate(-1px, -1px);
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
-      gap: 1.35rem;
+      grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+      gap: 1.5rem;
     }
 
     .product-card {
-      background: var(--card-surface);
-      border: 1px solid var(--border-pearl);
+      background: var(--card-bg);
+      border: 2.5px solid var(--carbon-ink);
       border-radius: 22px;
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-pop);
       display: flex;
       flex-direction: column;
-      transition: transform 0.28s ease, border-color 0.28s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .product-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--lupine-mauve);
+      transform: translate(-3px, -3px);
+      box-shadow: 9px 9px 0px var(--electric-yellow);
     }
 
     .product-thumb-wrap {
       aspect-ratio: 4 / 4.4;
-      background: var(--petal-pink);
+      background: var(--bubblegum-pink);
+      border-bottom: 2.5px solid var(--carbon-ink);
       overflow: hidden;
       cursor: pointer;
     }
@@ -349,11 +370,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.45s ease;
+      transition: transform 0.4s ease;
     }
 
     .product-card:hover .product-thumb-wrap img {
-      transform: scale(1.04);
+      transform: scale(1.05);
     }
 
     .product-card-body {
@@ -368,42 +389,49 @@
       font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
-      color: var(--hydrangea-blue);
-      font-weight: 600;
+      color: var(--hot-magenta);
+      font-weight: 800;
     }
 
     .card-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.32rem;
+      font-size: 1.38rem;
       font-weight: 600;
+      color: var(--carbon-ink);
       cursor: pointer;
     }
 
     .card-price {
-      font-weight: 600;
-      color: var(--lupine-mauve);
-      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--carbon-ink);
+      background: var(--electric-yellow);
+      border: 1.5px solid var(--carbon-ink);
+      display: inline-block;
+      width: fit-content;
+      padding: 0.18rem 0.6rem;
+      border-radius: 8px;
+      font-size: 0.98rem;
       margin-bottom: 0.5rem;
     }
 
     .card-btn {
       margin-top: auto;
       width: 100%;
-      padding: 0.62rem;
+      padding: 0.65rem;
       border-radius: 12px;
-      border: 1px solid var(--lavender-shimmer);
-      background: #fff;
-      color: var(--text-dark);
-      font-weight: 500;
-      font-size: 0.86rem;
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--carbon-ink);
+      background: var(--hot-magenta);
+      color: var(--cream-pop);
+      font-weight: 700;
+      font-size: 0.88rem;
       cursor: pointer;
-      transition: all 0.22s ease;
+      transition: all 0.15s ease;
     }
 
     .card-btn:hover {
-      background: var(--lupine-mauve);
-      border-color: var(--lupine-mauve);
-      color: #fff;
+      background: var(--electric-yellow);
+      color: var(--carbon-ink);
     }
 
     /* =========================================
@@ -414,16 +442,19 @@
     }
 
     .back-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      font-weight: 500;
+      background: var(--cream-pop);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--carbon-ink);
+      color: var(--carbon-ink);
+      padding: 0.45rem 0.95rem;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
       cursor: pointer;
     }
 
     .back-btn:hover {
-      color: var(--text-dark);
+      background: var(--electric-yellow);
     }
 
     .product-detail-layout {
@@ -436,17 +467,18 @@
     .rotator-card,
     .product-info-card,
     .payment-card {
-      background: var(--card-surface);
-      border: 1px solid var(--border-pearl);
-      border-radius: 26px;
+      background: var(--card-bg);
+      border: 2.5px solid var(--carbon-ink);
+      border-radius: 24px;
       padding: 1.35rem;
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-pop);
     }
 
     .rotator-stage {
       position: relative;
       aspect-ratio: 1 / 1.05;
-      background: var(--petal-pink);
+      background: var(--bubblegum-pink);
+      border: 2px solid var(--carbon-ink);
       border-radius: 18px;
       overflow: hidden;
       display: flex;
@@ -466,13 +498,15 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      border: 1px solid var(--border-pearl);
-      background: rgba(255, 255, 255, 0.88);
-      color: var(--text-dark);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 2px 2px 0px var(--carbon-ink);
+      background: var(--electric-yellow);
+      color: var(--carbon-ink);
       font-size: 1.35rem;
+      font-weight: 800;
       cursor: pointer;
       z-index: 3;
     }
@@ -485,24 +519,26 @@
       align-items: center;
       justify-content: space-between;
       margin-top: 0.85rem;
-      font-size: 0.83rem;
-      color: var(--text-muted);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--carbon-ink);
     }
 
     .auto-rotate-btn {
-      background: var(--petal-pink);
-      border: 1px solid var(--lavender-shimmer);
-      color: var(--text-dark);
-      padding: 0.35rem 0.78rem;
+      background: var(--electric-yellow);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 2px 2px 0px var(--carbon-ink);
+      color: var(--carbon-ink);
+      padding: 0.35rem 0.82rem;
       border-radius: 999px;
       font-size: 0.8rem;
+      font-weight: 800;
       cursor: pointer;
     }
 
     .auto-rotate-btn.spinning {
-      background: var(--hydrangea-blue);
-      color: #fff;
-      border-color: var(--hydrangea-blue);
+      background: var(--hot-magenta);
+      color: var(--cream-pop);
     }
 
     .rotator-thumbs {
@@ -517,13 +553,14 @@
       height: 58px;
       border-radius: 12px;
       overflow: hidden;
-      border: 2px solid transparent;
+      border: 2px solid var(--carbon-ink);
       cursor: pointer;
-      opacity: 0.72;
+      opacity: 0.68;
     }
 
     .thumb-item.active {
-      border-color: var(--lupine-mauve);
+      border: 3px solid var(--hot-magenta);
+      box-shadow: 2px 2px 0px var(--electric-yellow);
       opacity: 1;
     }
 
@@ -537,105 +574,203 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 0.2em;
-      color: var(--hydrangea-blue);
-      font-weight: 600;
+      color: var(--hot-magenta);
+      font-weight: 800;
     }
 
     .detail-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       margin: 0.3rem 0;
     }
 
     .detail-price {
-      font-size: 1.55rem;
-      font-weight: 600;
-      color: var(--lupine-mauve);
+      font-size: 1.45rem;
+      font-weight: 800;
+      background: var(--electric-yellow);
+      border: 2px solid var(--carbon-ink);
+      display: inline-block;
+      padding: 0.2rem 0.75rem;
+      border-radius: 10px;
+      color: var(--carbon-ink);
       margin-bottom: 1rem;
     }
 
     .detail-description {
       font-size: 0.95rem;
       line-height: 1.65;
-      color: var(--text-muted);
+      color: var(--carbon-soft);
       margin-bottom: 1.1rem;
     }
 
     .detail-specs {
       list-style: none;
-      border-top: 1px solid var(--border-pearl);
+      border-top: 2px solid var(--carbon-ink);
       padding-top: 0.9rem;
       margin-bottom: 1.4rem;
       display: flex;
       flex-direction: column;
       gap: 0.45rem;
       font-size: 0.88rem;
+      font-weight: 600;
     }
 
     .detail-actions {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.75rem;
     }
 
     .btn-primary,
     .btn-secondary,
-    .btn-whatsapp {
-      padding: 0.88rem 1.25rem;
+    .btn-whatsapp,
+    .btn-reminder-secondary {
+      padding: 0.9rem 1.25rem;
       border-radius: 14px;
-      font-size: 0.94rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 800;
       cursor: pointer;
-      border: none;
-      transition: all 0.22s ease;
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 4px 4px 0px var(--carbon-ink);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover,
+    .btn-whatsapp:hover,
+    .btn-reminder-secondary:hover {
+      transform: translate(-1px, -1px);
     }
 
     .btn-primary {
-      background: var(--lupine-mauve);
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: var(--hydrangea-blue);
+      background: var(--hot-magenta);
+      color: var(--cream-pop);
     }
 
     .btn-secondary {
-      background: var(--petal-pink);
-      color: var(--text-dark);
-      border: 1px solid var(--lavender-shimmer);
-    }
-
-    .btn-secondary:hover {
-      background: var(--lavender-shimmer);
-      color: #fff;
+      background: var(--electric-yellow);
+      color: var(--carbon-ink);
     }
 
     .selection-feedback {
-      margin-top: 0.65rem;
-      font-size: 0.85rem;
-      color: var(--hydrangea-blue);
-      font-weight: 600;
+      margin-top: 0.7rem;
+      font-size: 0.86rem;
+      color: var(--hot-magenta);
+      font-weight: 800;
       min-height: 1.2rem;
     }
 
     /* =========================================
-       PORTAL 4: PAGOS (2 CUOTAS + CALCULADORA)
+       SECCIÓN DE RECOMENDACIÓN CRUZADA ABAJO
+       ========================================= */
+    .recommendations-section {
+      margin-top: 2.6rem;
+      padding-top: 1.8rem;
+      border-top: 3px dashed var(--carbon-ink);
+    }
+
+    .recommendations-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .recommendations-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.75rem, 3.8vw, 2.3rem);
+      color: var(--cream-pop);
+      text-shadow: 2.5px 2.5px 0px var(--carbon-ink);
+    }
+
+    .recommendations-sub {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--electric-yellow);
+      text-shadow: 1px 1px 0px var(--carbon-ink);
+    }
+
+    .recommendations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .rec-badge {
+      display: inline-block;
+      background: var(--bubblegum-pink);
+      color: var(--carbon-ink);
+      border: 1.5px solid var(--carbon-ink);
+      border-radius: 999px;
+      padding: 0.12rem 0.55rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: fit-content;
+    }
+
+    /* =========================================
+       PORTAL 4: PAGOS + RECORDATORIOS
        ========================================= */
     .payment-header {
       text-align: center;
-      max-width: 580px;
-      margin: 0 auto 1.8rem;
+      max-width: 620px;
+      margin: 0 auto 1.5rem;
     }
 
     .payment-header h2 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.15rem;
+      font-size: 2.25rem;
+      color: var(--cream-pop);
+      text-shadow: 3px 3px 0px var(--carbon-ink);
       margin-bottom: 0.45rem;
     }
 
     .payment-lead {
-      font-size: 0.93rem;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--cream-pop);
+      text-shadow: 1px 1px 0px var(--carbon-ink);
+    }
+
+    .reminder-alert-banner {
+      background: var(--electric-yellow);
+      border: 2.5px solid var(--carbon-ink);
+      box-shadow: 5px 5px 0px var(--carbon-ink);
+      border-radius: 18px;
+      padding: 0.95rem 1.2rem;
+      margin: 0 auto 1.6rem;
+      max-width: 900px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.85rem;
+    }
+
+    .reminder-alert-banner.overdue {
+      background: #FF6B6B;
+      color: var(--cream-pop);
+    }
+
+    .reminder-alert-text {
+      font-size: 0.9rem;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    .reminder-bell-btn {
+      background: var(--cream-pop);
+      color: var(--carbon-ink);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 2px 2px 0px var(--carbon-ink);
+      border-radius: 999px;
+      padding: 0.42rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 800;
+      cursor: pointer;
     }
 
     .payment-grid {
@@ -646,7 +781,7 @@
 
     .payment-card h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.38rem;
+      font-size: 1.45rem;
       margin-bottom: 0.9rem;
     }
 
@@ -661,10 +796,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.55rem 0.75rem;
-      background: var(--ivory-base);
+      padding: 0.6rem 0.8rem;
+      background: #fff;
+      border: 1.5px solid var(--carbon-ink);
       border-radius: 12px;
       font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .payment-total-row {
@@ -672,46 +809,94 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.85rem 0;
-      border-top: 1px solid var(--border-pearl);
-      border-bottom: 1px solid var(--border-pearl);
+      border-top: 2px solid var(--carbon-ink);
+      border-bottom: 2px solid var(--carbon-ink);
       margin-bottom: 1.2rem;
       font-size: 1.05rem;
+      font-weight: 700;
     }
 
     .payment-total-row strong {
-      color: var(--lupine-mauve);
-      font-size: 1.3rem;
+      background: var(--electric-yellow);
+      border: 2px solid var(--carbon-ink);
+      padding: 0.2rem 0.65rem;
+      border-radius: 10px;
+      color: var(--carbon-ink);
+      font-size: 1.25rem;
     }
 
     .installment-box {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: linear-gradient(135deg, var(--petal-pink), #F7F0F5);
-      border: 1px solid var(--lavender-shimmer);
+      background: var(--bubblegum-pink);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--carbon-ink);
       border-radius: 16px;
       padding: 0.9rem 1rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .installment-box.past-due {
+      background: #FF9EBB;
+      border: 2.5px solid var(--carbon-ink);
+    }
+
+    .installment-top-row {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
     }
 
     .installment-tag {
-      display: block;
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--hydrangea-blue);
-      font-weight: 600;
+      letter-spacing: 0.12em;
+      background: var(--electric-yellow);
+      border: 1.5px solid var(--carbon-ink);
+      display: inline-block;
+      padding: 0.1rem 0.45rem;
+      border-radius: 6px;
+      color: var(--carbon-ink);
+      font-weight: 800;
+    }
+
+    .status-pill {
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 0.1rem 0.5rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--carbon-ink);
+      text-transform: uppercase;
+    }
+
+    .status-pill.overdue {
+      background: var(--hot-magenta);
+      color: var(--cream-pop);
+    }
+
+    .status-pill.upcoming {
+      background: var(--cream-pop);
+      color: var(--carbon-ink);
     }
 
     .installment-date {
+      display: block;
       font-size: 1rem;
-      color: var(--text-dark);
+      font-weight: 800;
+      color: var(--carbon-ink);
     }
 
     .installment-amount {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-dark);
+      font-size: 1.18rem;
+      font-weight: 800;
+      background: var(--cream-pop);
+      border: 2px solid var(--carbon-ink);
+      padding: 0.25rem 0.6rem;
+      border-radius: 10px;
+      color: var(--carbon-ink);
     }
 
     .rate-header {
@@ -719,7 +904,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 0.5rem;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.85rem;
     }
 
     .rate-header h3 {
@@ -727,17 +912,21 @@
     }
 
     .rate-status {
-      font-size: 0.75rem;
-      color: var(--hydrangea-blue);
-      font-weight: 600;
+      font-size: 0.74rem;
+      background: var(--electric-yellow);
+      border: 1.5px solid var(--carbon-ink);
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      color: var(--carbon-ink);
+      font-weight: 800;
     }
 
     .rate-display-box {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: var(--ivory-base);
-      border: 1px solid var(--border-pearl);
+      background: #fff;
+      border: 2px solid var(--carbon-ink);
       border-radius: 14px;
       padding: 0.75rem 0.95rem;
       margin-bottom: 0.95rem;
@@ -746,7 +935,8 @@
     .small-label {
       display: block;
       font-size: 0.75rem;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: var(--carbon-soft);
       margin-bottom: 0.2rem;
     }
 
@@ -754,25 +944,27 @@
       display: flex;
       align-items: center;
       gap: 0.35rem;
-      font-weight: 600;
+      font-weight: 800;
     }
 
     .rate-input {
-      width: 92px;
+      width: 94px;
       padding: 0.28rem 0.45rem;
-      border: 1px solid var(--lavender-shimmer);
+      border: 2px solid var(--carbon-ink);
       border-radius: 8px;
       font-family: inherit;
-      font-weight: 600;
-      color: var(--text-dark);
+      font-weight: 800;
+      color: var(--carbon-ink);
     }
 
     .refresh-rate-btn {
-      width: 34px;
-      height: 34px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      border: 1px solid var(--lavender-shimmer);
-      background: #fff;
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 2px 2px 0px var(--carbon-ink);
+      background: var(--electric-yellow);
+      font-weight: 800;
       cursor: pointer;
     }
 
@@ -784,18 +976,19 @@
 
     .preset-btn {
       flex: 1;
-      padding: 0.45rem;
+      padding: 0.48rem;
       border-radius: 10px;
-      border: 1px solid var(--border-pearl);
+      border: 2px solid var(--carbon-ink);
       background: #fff;
+      font-weight: 700;
       font-size: 0.82rem;
       cursor: pointer;
     }
 
     .preset-btn.active {
-      background: var(--hydrangea-blue);
-      color: #fff;
-      border-color: var(--hydrangea-blue);
+      background: var(--electric-yellow);
+      box-shadow: 2px 2px 0px var(--carbon-ink);
+      color: var(--carbon-ink);
     }
 
     .calc-input-group {
@@ -807,55 +1000,69 @@
 
     .calc-input-group label {
       font-size: 0.82rem;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: var(--carbon-soft);
     }
 
     .calc-input {
-      padding: 0.7rem 0.9rem;
+      padding: 0.72rem 0.9rem;
       border-radius: 12px;
-      border: 1px solid var(--lavender-shimmer);
+      border: 2px solid var(--carbon-ink);
+      background: #fff;
       font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-dark);
+      font-weight: 800;
+      color: var(--carbon-ink);
     }
 
     .calc-result-box {
-      background: var(--petal-pink);
+      background: var(--electric-yellow);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--carbon-ink);
       border-radius: 14px;
       padding: 0.9rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1.15rem;
     }
 
     .calc-result-box span {
       font-size: 0.84rem;
-      color: var(--text-muted);
+      font-weight: 700;
+      color: var(--carbon-ink);
     }
 
     .calc-result-box strong {
       font-size: 1.25rem;
-      color: var(--text-dark);
+      font-weight: 800;
+      color: var(--carbon-ink);
+    }
+
+    .payment-cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
     }
 
     .btn-whatsapp {
       width: 100%;
-      background: linear-gradient(135deg, var(--lupine-mauve), var(--hydrangea-blue));
-      color: #fff;
-      box-shadow: 0 12px 24px rgba(136, 147, 189, 0.28);
+      background: var(--hot-magenta);
+      color: var(--cream-pop);
     }
 
-    .btn-whatsapp:hover {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
+    .btn-reminder-secondary {
+      width: 100%;
+      background: var(--electric-yellow);
+      color: var(--carbon-ink);
     }
 
     .whatsapp-note {
       font-size: 0.78rem;
-      color: var(--text-muted);
+      font-weight: 600;
+      color: var(--carbon-soft);
       text-align: center;
-      margin-top: 0.6rem;
+      margin-top: 0.65rem;
+      line-height: 1.45;
     }
 
     /* =========================================
@@ -875,9 +1082,9 @@
     .cart-backdrop {
       position: absolute;
       inset: 0;
-      background: rgba(42, 34, 51, 0.35);
+      background: rgba(26, 22, 25, 0.55);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.25s ease;
     }
 
     .cart-drawer.open .cart-backdrop {
@@ -888,15 +1095,15 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: min(390px, 92vw);
+      width: min(395px, 92vw);
       height: 100%;
-      background: var(--ivory-base);
-      border-left: 1px solid var(--border-pearl);
+      background: var(--cream-pop);
+      border-left: 3px solid var(--carbon-ink);
       padding: 1.35rem;
       display: flex;
       flex-direction: column;
       transform: translateX(100%);
-      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
     .cart-drawer.open .cart-panel {
@@ -908,15 +1115,23 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--border-pearl);
+      border-bottom: 2px solid var(--carbon-ink);
+    }
+
+    .cart-panel-header h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
     }
 
     .close-drawer-btn {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
+      background: var(--electric-yellow);
+      border: 2px solid var(--carbon-ink);
+      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+      font-weight: 800;
       cursor: pointer;
-      color: var(--text-dark);
+      color: var(--carbon-ink);
     }
 
     .cart-items-container {
@@ -933,7 +1148,8 @@
       gap: 0.75rem;
       align-items: center;
       background: #fff;
-      border: 1px solid var(--border-pearl);
+      border: 2px solid var(--carbon-ink);
+      box-shadow: 3px 3px 0px var(--bubblegum-pink);
       border-radius: 14px;
       padding: 0.6rem;
     }
@@ -942,6 +1158,7 @@
       width: 54px;
       height: 54px;
       border-radius: 10px;
+      border: 1.5px solid var(--carbon-ink);
       object-fit: cover;
     }
 
@@ -951,25 +1168,29 @@
 
     .cart-item-info h4 {
       font-size: 0.92rem;
+      font-weight: 700;
       margin-bottom: 0.15rem;
     }
 
     .cart-item-info span {
       font-size: 0.85rem;
-      color: var(--lupine-mauve);
-      font-weight: 600;
+      color: var(--hot-magenta);
+      font-weight: 800;
     }
 
     .remove-item-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 0.8rem;
+      background: var(--electric-yellow);
+      border: 1.5px solid var(--carbon-ink);
+      border-radius: 8px;
+      padding: 0.25rem 0.5rem;
+      color: var(--carbon-ink);
+      font-size: 0.76rem;
+      font-weight: 800;
       cursor: pointer;
     }
 
     .cart-panel-footer {
-      border-top: 1px solid var(--border-pearl);
+      border-top: 2px solid var(--carbon-ink);
       padding-top: 1rem;
     }
 
@@ -977,6 +1198,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-weight: 800;
       margin-bottom: 0.85rem;
     }
 
@@ -1000,7 +1222,7 @@
     <div class="welcome-content">
       <span class="micro-greeting">Bienvenido</span>
       <h1 class="welcome-title">Disfruta de la experiencia de elegir tu pieza ideal</h1>
-      <p class="welcome-subtitle">Una selección de carteras y joyería lista para ti.</p>
+      <p class="welcome-subtitle">Carteras y joyería listas para armar tu selección.</p>
 
       <div class="yasmin-stage">
         <div class="speech-bubble">¡Hola! ✨</div>
@@ -1025,7 +1247,7 @@
     <!-- PORTAL 2: VITRINA (4 CARTERAS Y 6 JOYAS) -->
     <main id="view-catalog" class="view active">
       <section class="catalog-hero">
-        <p class="eyebrow">Piezas disponibles</p>
+        <span class="eyebrow">Piezas disponibles</span>
         <h2>Explora la selección</h2>
         <div class="filter-pills" role="tablist">
           <button type="button" class="pill active" data-filter="todos">Todas (10)</button>
@@ -1037,7 +1259,7 @@
       <section id="products-grid" class="products-grid" aria-live="polite"></section>
     </main>
 
-    <!-- PORTAL 3: ARTÍCULO INDIVIDUAL (ROTACIÓN ENTERA DE IMÁGENES) -->
+    <!-- PORTAL 3: ARTÍCULO INDIVIDUAL + RECOMENDACIÓN CRUZADA ABAJO -->
     <section id="view-product" class="view">
       <div class="view-nav">
         <button type="button" class="back-btn" id="btn-back-to-catalog">← Volver a la selección</button>
@@ -1076,20 +1298,40 @@
           <p class="selection-feedback" id="selection-feedback"></p>
         </div>
       </div>
+
+      <!-- RECOMENDACIÓN CRUZADA: SI ES CARTERA -> JOYERÍA; SI ES JOYERÍA -> CARTERAS -->
+      <section class="recommendations-section" aria-live="polite">
+        <div class="recommendations-header">
+          <span class="eyebrow" id="rec-eyebrow">Combina tu elección</span>
+          <h3 class="recommendations-title" id="rec-title">Joyería recomendada</h3>
+          <p class="recommendations-sub" id="rec-subtitle">Piezas parecidas para acompañar esta cartera.</p>
+        </div>
+        <div id="recommendations-grid" class="recommendations-grid"></div>
+      </section>
     </section>
 
-    <!-- PORTAL 4: MODALIDADES DE PAGO (2 CUOTAS + CALCULADORA + FACTURA WHATSAPP) -->
+    <!-- PORTAL 4: MODALIDADES DE PAGO (2 CUOTAS + RECORDATORIOS + CALCULADORA + FACTURA) -->
     <section id="view-payment" class="view">
       <div class="view-nav">
         <button type="button" class="back-btn" id="btn-back-from-payment">← Volver</button>
       </div>
 
       <div class="payment-header">
-        <p class="eyebrow">Modalidades de pago</p>
+        <span class="eyebrow">Modalidades de pago</span>
         <h2>Plan quincenal (15 y último)</h2>
         <p class="payment-lead">
           El total se divide automáticamente en <strong>2 cuotas quincenales</strong> según la fecha actual.
         </p>
+      </div>
+
+      <!-- BANNER DE ESTADO / RECORDATORIO DE FECHAS -->
+      <div id="reminder-banner" class="reminder-alert-banner" role="status">
+        <div class="reminder-alert-text" id="reminder-banner-text">
+          Revisando fechas de pago...
+        </div>
+        <button type="button" class="reminder-bell-btn" id="btn-enable-notifications">
+          🔔 Activar avisos en este dispositivo
+        </button>
       </div>
 
       <div class="payment-grid">
@@ -1104,17 +1346,23 @@
 
           <div class="installments-block">
             <h3>2. Cronograma de 2 cuotas</h3>
-            <div class="installment-box">
+            <div class="installment-box" id="quota-1-box">
               <div>
-                <span class="installment-tag">Cuota 1 (50%)</span>
+                <div class="installment-top-row">
+                  <span class="installment-tag">Cuota 1 (50%)</span>
+                  <span class="status-pill upcoming" id="quota-1-status">Programada</span>
+                </div>
                 <strong class="installment-date" id="quota-1-date">--</strong>
               </div>
               <span class="installment-amount" id="quota-1-amount">$0.00</span>
             </div>
 
-            <div class="installment-box">
+            <div class="installment-box" id="quota-2-box">
               <div>
-                <span class="installment-tag">Cuota 2 (50%)</span>
+                <div class="installment-top-row">
+                  <span class="installment-tag">Cuota 2 (50%)</span>
+                  <span class="status-pill upcoming" id="quota-2-status">Programada</span>
+                </div>
                 <strong class="installment-date" id="quota-2-date">--</strong>
               </div>
               <span class="installment-amount" id="quota-2-amount">$0.00</span>
@@ -1125,15 +1373,15 @@
         <div class="payment-card">
           <div class="rate-header">
             <h3>3. Calculadora del día ($ → Bs.)</h3>
-            <span class="rate-status" id="rate-status">Actualizando tasa...</span>
+            <span class="rate-status" id="rate-status">Estimado BCV actual</span>
           </div>
 
           <div class="rate-display-box">
             <div>
-              <span class="small-label">Tasa diaria de referencia</span>
+              <span class="small-label">Tasa BCV estimada actual (varía)</span>
               <div class="rate-value-row">
                 <span>1 USD = </span>
-                <input type="number" step="0.01" id="daily-rate-input" class="rate-input" aria-label="Tasa del día" />
+                <input type="number" step="0.01" id="daily-rate-input" class="rate-input" aria-label="Tasa BCV estimada" />
                 <span> Bs.</span>
               </div>
             </div>
@@ -1152,15 +1400,20 @@
           </div>
 
           <div class="calc-result-box">
-            <span>Equivalente estimado hoy</span>
+            <span>Estimado hoy en Bs.</span>
             <strong id="calc-bs-result">Bs. 0,00</strong>
           </div>
 
-          <button type="button" class="btn-whatsapp" id="btn-send-invoice">
-            Enviar factura por WhatsApp
-          </button>
+          <div class="payment-cta-stack">
+            <button type="button" class="btn-whatsapp" id="btn-send-invoice">
+              Enviar factura por WhatsApp
+            </button>
+            <button type="button" class="btn-reminder-secondary" id="btn-send-reminder-wa">
+              ⏰ Enviar recordatorio de pago por WhatsApp
+            </button>
+          </div>
           <p class="whatsapp-note">
-            Envía automáticamente tus piezas, fechas y montos de las 2 cuotas y el cálculo en Bs. al WhatsApp.
+            El precio del dólar BCV es un estimado actual y varía constantemente; el monto exacto en Bs. se confirma al realizar cada pago.
           </p>
         </div>
       </div>
@@ -1203,108 +1456,118 @@
     };
 
     /* ========================================================================
-       CATÁLOGO: 4 CARTERAS + 6 JOYERÍA (Sube tus fotos a la carpeta /img)
+       CATÁLOGO: 4 CARTERAS + 6 JOYERÍA
        ======================================================================== */
     const CATALOGO = [
       {
         id: "cartera-1",
         categoria: "cartera",
         categoriaLabel: "Cartera",
+        estilo: "clasico",
         nombre: "Cartera 01",
-        precio: 28.00,
-        descripcion: "Cartera de acabado estructurado, práctica y elegante para uso diario o salida.",
+        precio: 25.00,
+        descripcion: "Cartera práctica y llamativa para salidas de noche.",
         detalles: ["Acabado resistente", "Correa ajustable", "Entrega inmediata"],
-        imagenes: ["img/cartera-1-a.jpg", "img/cartera-1-b.jpg", "img/cartera-1-c.jpg"]
+        imagenes: ["img/cartera-1.jpg"]
       },
       {
         id: "cartera-2",
         categoria: "cartera",
         categoriaLabel: "Cartera",
-        nombre: "Cartera 02",
-        precio: 32.00,
-        descripcion: "Diseño compacto con detalles perlados y compartimento interior funcional.",
+        estilo: "pp",
+        nombre: "Cartera de niña",
+        precio: 10.00,
+        descripcion: "Diseño compacto con compartimento interior funcional.",
         detalles: ["Textura suave", "Asa y correa", "Entrega inmediata"],
-        imagenes: ["img/cartera-2-a.jpg", "img/cartera-2-b.jpg", "img/cartera-2-c.jpg"]
+        imagenes: ["img/cartera-2.jpg"]
       },
       {
         id: "cartera-3",
         categoria: "cartera",
         categoriaLabel: "Cartera",
+        estilo: "pop",
         nombre: "Cartera 03",
         precio: 30.00,
-        descripcion: "Silueta ligera y combinable con distintos estilos y tonos.",
+        descripcion: "Silueta ligera y combinable con distintos looks.",
         detalles: ["Acabado limpio", "Cierre seguro", "Entrega inmediata"],
-        imagenes: ["img/cartera-3-a.jpg", "img/cartera-3-b.jpg", "img/cartera-3-c.jpg"]
+        imagenes: ["img/cartera-3.jpg"]
       },
       {
         id: "cartera-4",
         categoria: "cartera",
         categoriaLabel: "Cartera",
+        estilo: "brillo",
         nombre: "Cartera 04",
         precio: 35.00,
-        descripcion: "Modelo destacado con broche protagonista y buen espacio interno.",
+        descripcion: "Modelo destacado con buena capacidad interna.",
         detalles: ["Detalles brillantes", "Cómoda al hombro", "Entrega inmediata"],
-        imagenes: ["img/cartera-4-a.jpg", "img/cartera-4-b.jpg", "img/cartera-4-c.jpg"]
+        imagenes: ["img/cartera-4.jpg"]
       },
       {
         id: "joya-1",
         categoria: "joyeria",
         categoriaLabel: "Joyería",
+        estilo: "brillo",
         nombre: "Joyería 01",
         precio: 14.00,
-        descripcion: "Pieza delicada de brillo sutil para acompañar tu día a día.",
+        descripcion: "Pieza de brillo llamativo para acompañar tu estilo diario.",
         detalles: ["Acabado brillante", "Ligera y cómoda", "Entrega inmediata"],
-        imagenes: ["img/joya-1-a.jpg", "img/joya-1-b.jpg"]
+        imagenes: ["img/joya-1.jpg"]
       },
       {
         id: "joya-2",
         categoria: "joyeria",
         categoriaLabel: "Joyería",
+        estilo: "clasico",
         nombre: "Joyería 02",
         precio: 16.00,
         descripcion: "Detalle fino y versátil, ideal para combinar o lucir sola.",
         detalles: ["Acabado pulido", "Ajuste cómodo", "Entrega inmediata"],
-        imagenes: ["img/joya-2-a.jpg", "img/joya-2-b.jpg"]
+        imagenes: ["img/joya-2.jpg"]
       },
       {
         id: "joya-3",
         categoria: "joyeria",
         categoriaLabel: "Joyería",
+        estilo: "pop",
         nombre: "Joyería 03",
         precio: 15.00,
-        descripcion: "Diseño femenino con destello luminoso.",
+        descripcion: "Diseño con destello luminoso.",
         detalles: ["Acabado espejo", "Cierre práctico", "Entrega inmediata"],
-        imagenes: ["img/joya-3-a.jpg", "img/joya-3-b.jpg"]
+        imagenes: ["img/joya-3.jpg"]
       },
       {
         id: "joya-4",
         categoria: "joyeria",
         categoriaLabel: "Joyería",
+        estilo: "perlado",
         nombre: "Joyería 04",
         precio: 18.00,
-        descripcion: "Acabado perlado con presencia elegante para ocasiones especiales.",
-        detalles: ["Toque perlado", "Broche seguro", "Entrega inmediata"],
-        imagenes: ["img/joya-4-a.jpg", "img/joya-4-b.jpg"]
+        descripcion: "Pieza con presencia marcada para ocasiones especiales.",
+        detalles: ["Acabado luminoso", "Broche seguro", "Entrega inmediata"],
+        imagenes: ["img/joya-4.jpg"]
       },
       {
         id: "joya-5",
         categoria: "joyeria",
         categoriaLabel: "Joyería",
+        estilo: "pop",
         nombre: "Joyería 05",
         precio: 12.00,
-        descripcion: "Pieza sutil y moderna para complementar tus carteras y looks.",
+        descripcion: "Pieza moderna para complementar tus carteras y accesorios.",
         detalles: ["Brillo duradero", "Fácil de combinar", "Entrega inmediata"],
-        imagenes: ["img/joya-5-a.jpg", "img/joya-5-b.jpg"]
+        imagenes: ["img/joya-5.jpg"]
       },
       {
         id: "joya-6",
         categoria: "joyeria",
         categoriaLabel: "Joyería",
+        estilo: "brillo",
         nombre: "Joyería 06",
         precio: 20.00,
-        descripcion: "Pieza especial con terminación fina y acabado luminoso.",
+        descripcion: "Pieza especial con terminación fina.",
         detalles: ["Selección especial", "Presentación cuidada", "Entrega inmediata"],
-        imagenes: ["img/joya-6-a.jpg", "img/joya-6-b.jpg"]
+        imagenes: ["img/joya-6.jpg"]
       }
     ];
 
@@ -1327,6 +1590,7 @@
         document.getElementById("btn-go-catalog").textContent = CONFIG.nombreTienda;
       }
 
+      actualizarBotonNotificaciones();
       renderCatalogo("todos");
       actualizarUICarrito();
       obtenerTasaDiaria();
@@ -1334,7 +1598,7 @@
       setTimeout(() => {
         welcomePortal.classList.add("fade-out");
         storeShell.classList.remove("hidden");
-        setTimeout(() => welcomePortal.remove(), 900);
+        setTimeout(() => welcomePortal.remove(), 800);
       }, CONFIG.tiempoBienvenidaMs);
     });
 
@@ -1373,6 +1637,78 @@
       });
     });
 
+    /* ========================================================================
+       RECOMENDACIÓN CRUZADA: CARTERA <-> JOYERÍA
+       ======================================================================== */
+    function obtenerRecomendacionesParecidas(itemBase) {
+      const categoriaOpuesta = itemBase.categoria === "cartera" ? "joyeria" : "cartera";
+      const candidatos = CATALOGO.filter(p => p.categoria === categoriaOpuesta);
+
+      return [...candidatos].sort((a, b) => {
+        const matchA = a.estilo === itemBase.estilo ? 1 : 0;
+        const matchB = b.estilo === itemBase.estilo ? 1 : 0;
+        if (matchA !== matchB) return matchB - matchA;
+        return Math.abs(a.precio - itemBase.precio) - Math.abs(b.precio - itemBase.precio);
+      }).slice(0, 3);
+    }
+
+    function renderRecomendaciones(itemBase) {
+      const esCartera = itemBase.categoria === "cartera";
+      const eyebrow = document.getElementById("rec-eyebrow");
+      const title = document.getElementById("rec-title");
+      const subtitle = document.getElementById("rec-subtitle");
+      const grid = document.getElementById("recommendations-grid");
+
+      if (esCartera) {
+        eyebrow.textContent = "Combina con tu cartera";
+        title.textContent = "Joyería más parecida";
+        subtitle.textContent = "Piezas de joyería ideales para acompañar esta cartera.";
+      } else {
+        eyebrow.textContent = "Combina con tu joyería";
+        title.textContent = "Carteras más parecidas";
+        subtitle.textContent = "Carteras seleccionadas para hacer juego con esta pieza.";
+      }
+
+      const recomendados = obtenerRecomendacionesParecidas(itemBase);
+      grid.innerHTML = "";
+
+      recomendados.forEach(rec => {
+        const mismaVibra = rec.estilo === itemBase.estilo;
+        const card = document.createElement("article");
+        card.className = "product-card";
+        card.innerHTML = `
+          <div class="product-thumb-wrap" data-rec-open="${rec.id}">
+            <img src="${rec.imagenes[0]}" alt="${rec.nombre}" loading="lazy" />
+          </div>
+          <div class="product-card-body">
+            <span class="rec-badge">${mismaVibra ? "Match ideal" : rec.categoriaLabel}</span>
+            <h4 class="card-title" data-rec-open="${rec.id}">${rec.nombre}</h4>
+            <div class="card-price">$${rec.precio.toFixed(2)}</div>
+            <button type="button" class="card-btn" data-rec-add="${rec.id}">+ Sumar a mi selección</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      grid.querySelectorAll("[data-rec-open]").forEach(el => {
+        el.addEventListener("click", () => abrirProducto(el.dataset.recOpen));
+      });
+
+      grid.querySelectorAll("[data-rec-add]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const pieza = CATALOGO.find(p => p.id === btn.dataset.recAdd);
+          if (!pieza) return;
+          agregarAlCarrito(pieza);
+          btn.textContent = "✓ Agregado";
+          document.getElementById("selection-feedback").textContent =
+            `✓ "${pieza.nombre}" sumado a tu selección.`;
+          setTimeout(() => {
+            btn.textContent = "+ Sumar a mi selección";
+          }, 1400);
+        });
+      });
+    }
+
     function abrirProducto(id) {
       const item = CATALOGO.find(p => p.id === id);
       if (!item) return;
@@ -1403,6 +1739,7 @@
       });
 
       actualizarVisorRotacion();
+      renderRecomendaciones(item);
       cambiarVista("view-product");
     }
 
@@ -1486,7 +1823,7 @@
       const container = document.getElementById("cart-items-container");
 
       if (carrito.length === 0) {
-        container.innerHTML = `<p style="color: var(--text-muted); font-size: 0.9rem;">Aún no has agregado piezas a tu selección.</p>`;
+        container.innerHTML = `<p style="color: var(--carbon-soft); font-size: 0.9rem; font-weight: 600;">Aún no has agregado piezas a tu selección.</p>`;
         document.getElementById("cart-subtotal").textContent = "$0.00";
         return;
       }
@@ -1521,6 +1858,9 @@
     document.getElementById("btn-close-cart").addEventListener("click", () => cartDrawer.classList.remove("open"));
     document.getElementById("cart-backdrop").addEventListener("click", () => cartDrawer.classList.remove("open"));
 
+    /* ========================================================================
+       FECHAS QUINCENALES (Modalidad) + DETECCIÓN DE FECHAS PASADAS
+       ======================================================================== */
     function calcularFechasQuincenales(fechaBase = new Date()) {
       const meses = [
         "enero", "febrero", "marzo", "abril", "mayo", "junio",
@@ -1531,19 +1871,98 @@
       const anio = fechaBase.getFullYear();
       const ultimoDiaMesActual = new Date(anio, mes + 1, 0).getDate();
 
+      let date1Obj, date2Obj, label1, label2;
+
       if (dia <= 15) {
-        return {
-          fechaCuota1: `15 de ${meses[mes]}`,
-          fechaCuota2: `${ultimoDiaMesActual} de ${meses[mes]}`
-        };
+        date1Obj = new Date(anio, mes, 15, 23, 59, 59);
+        date2Obj = new Date(anio, mes, ultimoDiaMesActual, 23, 59, 59);
+        label1 = `15 de ${meses[mes]}`;
+        label2 = `${ultimoDiaMesActual} de ${meses[mes]}`;
       } else {
         const mesSiguiente = (mes + 1) % 12;
-        return {
-          fechaCuota1: `${ultimoDiaMesActual} de ${meses[mes]}`,
-          fechaCuota2: `15 de ${meses[mesSiguiente]}`
-        };
+        const anioSiguiente = mes === 11 ? anio + 1 : anio;
+        date1Obj = new Date(anio, mes, ultimoDiaMesActual, 23, 59, 59);
+        date2Obj = new Date(anioSiguiente, mesSiguiente, 15, 23, 59, 59);
+        label1 = `${ultimoDiaMesActual} de ${meses[mes]}`;
+        label2 = `15 de ${meses[mesSiguiente]}`;
+      }
+
+      const ahoraMs = fechaBase.getTime();
+      const q1Pasada = ahoraMs > date1Obj.getTime();
+      const q2Pasada = ahoraMs > date2Obj.getTime();
+
+      return {
+        fechaCuota1: label1,
+        fechaCuota2: label2,
+        q1Pasada,
+        q2Pasada
+      };
+    }
+
+    function actualizarEstadoRecordatorios(q1Pasada, q2Pasada, fechaCuota1, fechaCuota2) {
+      const banner = document.getElementById("reminder-banner");
+      const bannerText = document.getElementById("reminder-banner-text");
+      const box1 = document.getElementById("quota-1-box");
+      const box2 = document.getElementById("quota-2-box");
+      const st1 = document.getElementById("quota-1-status");
+      const st2 = document.getElementById("quota-2-status");
+
+      box1.classList.toggle("past-due", q1Pasada);
+      box2.classList.toggle("past-due", q2Pasada);
+
+      st1.textContent = q1Pasada ? "Fecha pasada" : "Pendiente";
+      st1.className = `status-pill ${q1Pasada ? "overdue" : "upcoming"}`;
+
+      st2.textContent = q2Pasada ? "Fecha pasada" : "Pendiente";
+      st2.className = `status-pill ${q2Pasada ? "overdue" : "upcoming"}`;
+
+      banner.classList.remove("overdue");
+
+      if (q1Pasada && q2Pasada) {
+        banner.classList.add("overdue");
+        bannerText.textContent = `⚠️ Recordatorio: Las fechas de pago (${fechaCuota1} y ${fechaCuota2}) ya pasaron. Revisa tu saldo y envía recordatorio.`;
+      } else if (q1Pasada) {
+        banner.classList.add("overdue");
+        bannerText.textContent = `⚠️ Recordatorio: La fecha de la Cuota 1 (${fechaCuota1}) ya pasó. Próxima fecha: ${fechaCuota2}.`;
+      } else {
+        bannerText.textContent = `⏰ Próximas fechas de pago: Cuota 1 el ${fechaCuota1} y Cuota 2 el ${fechaCuota2}.`;
+      }
+
+      if ((q1Pasada || q2Pasada) && "Notification" in window && Notification.permission === "granted") {
+        const mensajeNotif = q1Pasada
+          ? `Recordatorio de pago: la fecha ${fechaCuota1} ya pasó.`
+          : `Recordatorio de pago: revisa tus fechas de cuota (${fechaCuota1} y ${fechaCuota2}).`;
+        sessionStorage.setItem("last_payment_reminder_notice", mensajeNotif);
+        new Notification("Recordatorio de pago", { body: mensajeNotif });
       }
     }
+
+    function actualizarBotonNotificaciones() {
+      const btn = document.getElementById("btn-enable-notifications");
+      if (!("Notification" in window)) {
+        btn.textContent = "Avisos en pantalla activos";
+        return;
+      }
+      if (Notification.permission === "granted") {
+        btn.textContent = "🔔 Avisos activados";
+      } else if (Notification.permission === "denied") {
+        btn.textContent = "Avisos bloqueados en navegador";
+      }
+    }
+
+    document.getElementById("btn-enable-notifications").addEventListener("click", async () => {
+      if (!("Notification" in window)) {
+        alert("Tu navegador no admite notificaciones del sistema, pero verás las alertas destacadas aquí mismo.");
+        return;
+      }
+      const permiso = await Notification.requestPermission();
+      actualizarBotonNotificaciones();
+      if (permiso === "granted") {
+        new Notification("Recordatorios activados", {
+          body: "Te avisaremos si la fecha de una cuota ya pasó al abrir la tienda."
+        });
+      }
+    });
 
     function abrirPortalPago(listaArticulos) {
       detenerRotacionAutomatica();
@@ -1558,13 +1977,15 @@
 
       const totalUsd = itemsParaPago.reduce((sum, item) => sum + item.precio, 0);
       const cuotaUsd = totalUsd / 2;
-      const { fechaCuota1, fechaCuota2 } = calcularFechasQuincenales(new Date());
+      const { fechaCuota1, fechaCuota2, q1Pasada, q2Pasada } = calcularFechasQuincenales(new Date());
 
       document.getElementById("payment-total-usd").textContent = `$${totalUsd.toFixed(2)}`;
       document.getElementById("quota-1-date").textContent = fechaCuota1;
       document.getElementById("quota-1-amount").textContent = `$${cuotaUsd.toFixed(2)}`;
       document.getElementById("quota-2-date").textContent = fechaCuota2;
       document.getElementById("quota-2-amount").textContent = `$${cuotaUsd.toFixed(2)}`;
+
+      actualizarEstadoRecordatorios(q1Pasada, q2Pasada, fechaCuota1, fechaCuota2);
 
       document.getElementById("calc-usd-input").value = cuotaUsd.toFixed(2);
       seleccionarPreset("preset-quota1");
@@ -1601,14 +2022,14 @@
         if (data && data.promedio) {
           tasaActualBs = Number(data.promedio);
           rateInput.value = tasaActualBs.toFixed(2);
-          statusEl.textContent = "Tasa al día ✓";
+          statusEl.textContent = "Estimado BCV actual";
           recalcularBolivares();
           return;
         }
       } catch (e) {}
 
       rateInput.value = tasaActualBs.toFixed(2);
-      statusEl.textContent = "Tasa referencial";
+      statusEl.textContent = "Estimado BCV (hoy)";
       recalcularBolivares();
     }
 
@@ -1651,6 +2072,17 @@
     document.getElementById("daily-rate-input").addEventListener("input", recalcularBolivares);
     document.getElementById("btn-refresh-rate").addEventListener("click", obtenerTasaDiaria);
 
+    /* ========================================================================
+       FACTURA Y RECORDATORIO POR WHATSAPP
+       ======================================================================== */
+    function construirDetalleBase(tasa, totalUsd, cuotaUsd, fechaCuota1, fechaCuota2) {
+      const cuota1Bs = (cuotaUsd * tasa).toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const totalBs = (totalUsd * tasa).toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const lineasArticulos = itemsParaPago.map(item => `• ${item.nombre} — $${item.precio.toFixed(2)}`).join("\n");
+
+      return { cuota1Bs, totalBs, lineasArticulos };
+    }
+
     document.getElementById("btn-send-invoice").addEventListener("click", () => {
       if (itemsParaPago.length === 0) return;
 
@@ -1658,14 +2090,11 @@
       const cuotaUsd = totalUsd / 2;
       const { fechaCuota1, fechaCuota2 } = calcularFechasQuincenales(new Date());
       const tasa = parseFloat(document.getElementById("daily-rate-input").value) || tasaActualBs;
-      const cuota1Bs = (cuotaUsd * tasa).toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      const totalBs = (totalUsd * tasa).toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      const { cuota1Bs, totalBs, lineasArticulos } = construirDetalleBase(tasa, totalUsd, cuotaUsd, fechaCuota1, fechaCuota2);
 
       const tituloFactura = CONFIG.nombreTienda.trim() !== ""
         ? `✨ *FACTURA / PEDIDO — ${CONFIG.nombreTienda.toUpperCase()}* ✨`
         : `✨ *RESUMEN DE PEDIDO / FACTURA* ✨`;
-
-      const lineasArticulos = itemsParaPago.map(item => `• ${item.nombre} — $${item.precio.toFixed(2)}`).join("\n");
 
       const mensaje = [
         tituloFactura,
@@ -1679,11 +2108,42 @@
         `• *Cuota 1 (50% — ${fechaCuota1}):* $${cuotaUsd.toFixed(2)}`,
         `• *Cuota 2 (50% — ${fechaCuota2}):* $${cuotaUsd.toFixed(2)}`,
         "",
-        `🧮 *Referencia del día (Tasa Bs. ${tasa.toFixed(2)}):*`,
+        `🧮 *Estimado en Bs. (Tasa BCV actual ref. Bs. ${tasa.toFixed(2)}):*`,
         `• Cuota 1 aprox.: Bs. ${cuota1Bs}`,
         `• Total aprox.: Bs. ${totalBs}`,
+        "_(El precio del dólar BCV es un estimado actual y varía constantemente; el monto exacto en Bs. se confirma al realizar cada pago)._",
         "",
         "¿Me confirmas disponibilidad para apartar mi selección?"
+      ].join("\n");
+
+      window.open(`https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent(mensaje)}`, "_blank");
+    });
+
+    document.getElementById("btn-send-reminder-wa").addEventListener("click", () => {
+      if (itemsParaPago.length === 0) return;
+
+      const totalUsd = itemsParaPago.reduce((sum, item) => sum + item.precio, 0);
+      const cuotaUsd = totalUsd / 2;
+      const { fechaCuota1, fechaCuota2, q1Pasada, q2Pasada } = calcularFechasQuincenales(new Date());
+      const tasa = parseFloat(document.getElementById("daily-rate-input").value) || tasaActualBs;
+      const { cuota1Bs, totalBs, lineasArticulos } = construirDetalleBase(tasa, totalUsd, cuotaUsd, fechaCuota1, fechaCuota2);
+
+      const estadoQ1 = q1Pasada ? "⚠️ Fecha pasada" : "Pendiente";
+      const estadoQ2 = q2Pasada ? "⚠️ Fecha pasada" : "Pendiente";
+
+      const mensaje = [
+        "⏰ *RECORDATORIO DE PAGO QUINCENAL* ⏰",
+        "",
+        "🛍️ *Piezas del pedido:*",
+        lineasArticulos,
+        "",
+        `💵 *Total:* $${totalUsd.toFixed(2)}`,
+        `• *Cuota 1 (${fechaCuota1}):* $${cuotaUsd.toFixed(2)} — ${estadoQ1}`,
+        `• *Cuota 2 (${fechaCuota2}):* $${cuotaUsd.toFixed(2)} — ${estadoQ2}`,
+        "",
+        `🧮 *Estimado en Bs. (Tasa BCV actual ref. Bs. ${tasa.toFixed(2)}):*`,
+        `• Cuota aprox.: Bs. ${cuota1Bs} | Total aprox.: Bs. ${totalBs}`,
+        "_(El precio del dólar BCV es un estimado actual y varía constantemente; el monto exacto en Bs. se confirma al realizar el pago)._"
       ].join("\n");
 
       window.open(`https://wa.me/${CONFIG.whatsappNumero}?text=${encodeURIComponent(mensaje)}`, "_blank");
